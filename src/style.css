@@ -1,0 +1,31 @@
+/* Ce fichier définit l'apparence de la carte et sa mise en page responsive. */
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-width: 320px;
+  height: 100%;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+.map-container {
+  height: 100%;
+  min-height: 100dvh;
+  position: relative;
+  background: #cbd6cf;
+}
+
+.map {
+  height: 100%;
+  min-height: 100dvh;
+  width: 100%;
+}

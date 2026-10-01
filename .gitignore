@@ -1,0 +1,6 @@
+# Ce fichier indique à Git les fichiers locaux et générés à ne pas versionner.
+# Il intervient avant chaque ajout de fichiers au dépôt.
+
+node_modules/
+dist/
+.DS_Store
