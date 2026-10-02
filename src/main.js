@@ -28,7 +28,8 @@ const cyclingRouteZoomedOutLineWidth = [
 function addCyclingRoutes(map) {
   map.addSource("cycling-routes", {
     type: "geojson", // Indique à MapLibre que les données sont au format GeoJSON.
-    data: "/data/Ciclorruta.geojson" // Chemin public vers les données officielles de Bogotá.
+    data: "/data/Ciclorruta.geojson", // Chemin public vers les données officielles de Bogotá.
+    tolerance: 0// désactive la simplification
   });
 
   // Cette couche remplit l'intérieur des emprises cyclables avec une couleur noire.
