@@ -37,5 +37,7 @@ Pour prévisualiser cette version sur votre ordinateur, après la compilation, e
 ```bash
 npm run preview
 ```
+pour lancer sur le telephone
+npm run dev -- --host
 
 Le terminal affiche l'adresse locale à ouvrir dans votre navigateur. Cette prévisualisation sert à vérifier la version générée ; elle ne publie pas le site sur Internet.
