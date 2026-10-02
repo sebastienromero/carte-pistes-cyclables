@@ -64,9 +64,9 @@ function createMap() {
     style: "https://tiles.openfreemap.org/styles/liberty", // Style visuel libre utilisé pour le fond de carte.
     center: bogotaCenter, // Position initiale définie plus haut.
     zoom: 11.5, // Niveau de zoom initial : plus le nombre est grand, plus on zoome.
-    attributionControl: true // Affiche les crédits obligatoires du fond cartographique.
+    attributionControl: { compact: true } // Affiche les crédits obligatoires du fond cartographique.
   });
-
+  
   // Ajoute les boutons de zoom et de déplacement dans le coin supérieur droit.
   map.addControl(new maplibregl.NavigationControl(), "top-right");
 
@@ -83,6 +83,14 @@ function createMap() {
   // Attend que le fond de carte soit prêt avant d'ajouter les pistes par-dessus.
   map.on("load", () => {
     addCyclingRoutes(map); // Ajoute les données officielles et leurs styles.
+  });
+
+  // Referme le « i » une fois la carte chargée.
+  map.on("idle", () => {
+    const attribution = document.querySelector(".maplibregl-ctrl-attrib");
+    if (!attribution) return;
+    attribution.removeAttribute("open");
+    attribution.classList.remove("maplibregl-compact-show");
   });
 }
 
