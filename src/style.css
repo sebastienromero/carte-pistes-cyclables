@@ -1,29 +1,38 @@
 /* Ce fichier définit l'apparence de la carte et sa mise en page responsive. */
 
 :root {
+  /* Évite de créer artificiellement des variantes de police absentes des fichiers chargés. */
   font-synthesis: none;
+  /* Demande au navigateur d'ajuster le rendu du texte pour faciliter la lecture. */
   text-rendering: optimizeLegibility;
 }
 
+/* Inclut bordures et espacements dans les dimensions déclarées des éléments. */
 * {
   box-sizing: border-box;
 }
 
+/* Supprime les marges du navigateur et donne à la page une hauteur minimale d'écran. */
 html,
 body {
+  /* Empêche la mise en page de devenir trop étroite sur les petits écrans. */
   min-width: 320px;
   height: 100%;
+  /* 100dvh suit la hauteur réellement visible, y compris sur les navigateurs mobiles. */
   min-height: 100dvh;
   margin: 0;
 }
 
+/* Cadre principal de la carte, dimensionné pour occuper toute la fenêtre. */
 .map-container {
   height: 100%;
   min-height: 100dvh;
   position: relative;
+  /* Reste visible pendant le chargement du fond cartographique. */
   background: #cbd6cf;
 }
 
+/* Surface que MapLibre utilise pour afficher la carte sur toute la largeur disponible. */
 .map {
   height: 100%;
   min-height: 100dvh;
