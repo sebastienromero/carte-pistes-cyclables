@@ -4,6 +4,7 @@ Il faut respecter les règles suivantes lors du code.
 Je suis débutant. Je dois comprendre et pouvoir justifier tout le code.
 
 ## Structure
+- Code toujours mobile-responsive: l'application est destinée à être utilisée principalement sur téléphone.
 - Code minimaliste : crée le minimum de fichiers et de code nécessaires.
 - Avant de créer un fichier, explique en une phrase pourquoi il est indispensable.
 - Pas de dépendance, de fichier ou de fonctionnalité non demandés.
