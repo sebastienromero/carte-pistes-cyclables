@@ -1,12 +1,15 @@
-// Ce module définit les données et les couches visuelles du réseau cyclable.
-// main.js l'appelle lorsque le fond de carte est prêt.
+// Ce fichier démarre la carte cyclable et contient ses couches spécifiques.
+// Il intervient au chargement de la page et réutilise le fond commun de shared/map.js.
 
-// Définit l'épaisseur habituelle du contour noir des pistes, en pixels.
-// Cette valeur reste utilisée quand la carte est suffisamment zoomée.
+import "../../shared/style.css";
+import "./style.css";
+import { createBaseMap } from "../../shared/map.js";
+
+// Épaisseur du contour des pistes lorsque la carte est suffisamment zoomée.
 const cyclingRouteLineWidth = 2.5;
 
-// Garde les pistes visibles quand on dézoome en épaississant temporairement leur contour.
-// Les valeurs correspondent à : niveau de zoom, puis épaisseur en pixels.
+// Épaissit les pistes quand on dézoome pour qu'elles restent visibles.
+// Chaque paire indique un niveau de zoom puis l'épaisseur correspondante en pixels.
 const cyclingRouteZoomedOutLineWidth = [
   "interpolate",
   ["linear"],
@@ -16,8 +19,10 @@ const cyclingRouteZoomedOutLineWidth = [
   12, cyclingRouteLineWidth
 ];
 
+const mapElement = document.querySelector("#map"); // Élément HTML dans lequel MapLibre dessinera la carte.
+
 // Ajoute les données GeoJSON et les deux couches visuelles des pistes cyclables.
-export function addCyclingRoutes(map) {
+function addCyclingRoutes(map) {
   map.addSource("cycling-routes", {
     type: "geojson", // Indique à MapLibre que les données sont au format GeoJSON.
     data: "/data/Ciclorruta.geojson", // Chemin public vers les données officielles de Bogotá.
@@ -47,4 +52,19 @@ export function addCyclingRoutes(map) {
       "line-opacity": 1 // Rend le contour presque complètement opaque.
     }
   });
+}
+
+// Crée la carte cyclable puis y ajoute les couches propres à ce réseau.
+function createCyclingMap() {
+  const map = createBaseMap(mapElement); // Réutilise le fond et les contrôles communs.
+
+  // Attend que le fond de carte soit prêt avant d'ajouter les pistes par-dessus.
+  map.on("load", () => {
+    addCyclingRoutes(map); // Ajoute les données officielles et leurs styles.
+  });
+}
+
+// Évite une erreur JavaScript si le HTML ne contient pas la zone de carte.
+if (mapElement) {
+  createCyclingMap(); // Lance la carte seulement si sa structure HTML existe.
 }

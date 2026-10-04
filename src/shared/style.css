@@ -1,4 +1,4 @@
-/* Ce fichier définit l'apparence de la carte et sa mise en page responsive. */
+/* Ce fichier définit les bases visuelles communes aux pages de cartes. */
 
 :root {
   /* Évite de créer artificiellement des variantes de police absentes des fichiers chargés. */
@@ -37,21 +37,4 @@ body {
   height: 100%;
   min-height: 100dvh;
   width: 100%;
-}
-
-/* Boutons plus grands (48 px, taille tactile recommandée) */
-.maplibregl-ctrl-group button {
-  width: 30px;
-  height: 30px;
-}
-
-/* Icônes proportionnées à la nouvelle taille */
-.maplibregl-ctrl-group button .maplibregl-ctrl-icon {
-  background-size: 60%;
-}
-
-/* Remonte les boutons à hauteur de pouce */
-.maplibregl-ctrl-bottom-right {
-  bottom: 100px;
-  right: 8px;
 }
