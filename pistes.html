@@ -1,0 +1,26 @@
+<!-- Ce fichier définit la structure accessible de l'application et charge le point d'entrée JavaScript. -->
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Définit l'encodage et adapte l'affichage aux écrans mobiles. -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fournit un résumé utile dans les résultats des moteurs de recherche. -->
+    <meta
+      name="description"
+      content="Carte interactive des pistes cyclables de Bogotá."
+    />
+    <title>Pistes cyclables de Bogotá</title>
+  </head>
+  <body>
+    <!-- Zone principale de la page, annoncée aux lecteurs d'écran. -->
+    <main class="map-container" aria-label="Carte des pistes cyclables">
+      <!-- Élément ciblé par MapLibre pour dessiner la carte interactive. -->
+      <div id="map" class="map" aria-label="Carte interactive de Bogotá"></div>
+    </main>
+
+    <!-- Charge le code de la carte comme module JavaScript après la structure HTML. -->
+    <script type="module" src="/src/networks/cycling/main.js"></script>
+  </body>
+</html>

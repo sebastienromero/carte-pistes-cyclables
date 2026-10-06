@@ -19,6 +19,18 @@ export function createBaseMap(mapElement) {
     attributionControl: { compact: true } // Affiche les crédits obligatoires du fond cartographique.
   });
 
+  // Bouton retour accueil
+  const backButton = document.createElement("button");
+  backButton.innerHTML = "← Accueil";
+  backButton.style.position = "absolute";
+  backButton.style.top = "10px";
+  backButton.style.left = "10px";
+  backButton.style.zIndex = "1";
+  backButton.style.padding = "10px";
+  backButton.style.cursor = "pointer";
+  backButton.onclick = () => window.location.href = "/";
+  mapElement.parentElement.appendChild(backButton);
+
   // Ajoute les boutons de zoom et de déplacement dans le coin supérieur droit.
   map.addControl(new maplibregl.NavigationControl(), "top-right");
 
