@@ -5,7 +5,7 @@ import fs from "node:fs";
 import readline from "node:readline";
 
 // --- Réglages : chemins des fichiers ---
-const gtfsFolder = "/Users/sromero/Documents/Code/Projets-velo/Cartes-Bogota/gtfs";
+const gtfsFolder = "gtfs";
 const stationsFile = "public/data/Estaciones_Troncales_de_TRANSMILENIO.geojson";
 
 // Découpe une ligne CSV en colonnes, en gérant les valeurs entre guillemets.
