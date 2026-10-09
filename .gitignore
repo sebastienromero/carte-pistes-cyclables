@@ -4,4 +4,4 @@
 node_modules/
 dist/
 .DS_Store
-gtfs/public/data/GTFS_20260929.zip
+gtfs/
