@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
-  // Si vous hébergez sur GitHub Pages, gardez cette ligne. Sinon, vous pouvez la supprimer.
-  base: '/carte-pistes-cyclables/', 
+  // Modifié pour correspondre à la racine de Cloudflare Pages (movibo.pages.dev)
+  base: '/', 
   build: {
     rollupOptions: {
       input: {
